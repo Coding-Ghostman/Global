@@ -1,0 +1,42 @@
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(100deg, rgb(239, 114, 114) 10%,rgb(30, 244, 176)90% );
+    display: flex;
+    width : 20rem 20rem;
+    align-items : center;
+    height: 100vh;
+    justify-content : center;
+}
+.login-container {
+    background: white;
+    color: black;
+    width :20rem;
+    padding: 30px 30px;
+    border-radius: 7px;
+}
+
+.label-container label {
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 10px;
+    border : 2px solid gainsboro;
+    outline: none;
+}
+
+form a{
+    text-decoration: none;
+}
+
