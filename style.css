@@ -30,10 +30,27 @@ form {
     flex-direction: column;
 }
 
-form input {
-    margin-bottom: 10px;
-    border : 2px solid gainsboro;
+label {
+    color : #242425;
+    display:block;
+    font: size 14px;
+    height: 16px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+input {
+    background: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    border : 1px solid black ;
+    border-radius:  8px;
+    color :rgb(43, 63, 57);
+    height: 26px;
+    line-height: 30px;
+    outline:none !important;
     outline: none;
+    padding-left: 5px;
 }
 
 form a{
