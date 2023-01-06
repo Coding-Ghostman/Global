@@ -1,59 +1,59 @@
-* {
-    margin : 0;
-    padding : 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+nav {
+	background-color: #333;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items  :center;
+	padding: 0 20px;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	margin: 0 10px;
+	padding: 10px 0;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #ccc;
 }
 
 body {
-    background: linear-gradient(100deg, rgb(239, 114, 114) 10%,rgb(30, 244, 176)90% );
-    display: flex;
-    width : 20rem 20rem;
-    align-items : center;
-    height: 100vh;
-    justify-content : center;
-}
-.login-container {
-    background: white;
-    color: black;
-    width :20rem;
-    padding: 30px 30px;
-    border-radius: 7px;
+	background-color: #e55b5b;
 }
 
-.label-container label {
-    font-weight: bold;
+@media screen and (max-width: 1200px) {
+	body {
+		background-color: #5de4de;
+	}
+
+	nav ul{
+		top: initial;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		transition: 3s;
+	}
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+@media screen and (max-width: 600px) {
+	body {
+		background-color: #6043f1;
+	}
 }
-
-label {
-    color : #242425;
-    display:block;
-    font: size 14px;
-    height: 16px;
-    margin-top: 2px;
-    margin-bottom: 5px;
+@media screen and (max-width: 300px) {
+	body {
+		background-color: #48ee39;
+	}
 }
-
-input {
-    background: transparent;
-    font-size: 15px;
-    font-weight: bold;
-    border : 1px solid black ;
-    border-radius:  8px;
-    color :rgb(43, 63, 57);
-    height: 26px;
-    line-height: 30px;
-    outline:none !important;
-    outline: none;
-    padding-left: 5px;
-}
-
-form a{
-    text-decoration: none;
-}
-
