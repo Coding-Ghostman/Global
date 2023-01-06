@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="calculator_style.css">
+    </head>
+    <body>
+        <script src="calculator_script.js"></script>
+        <h1>Calculator</h1>
+        <div class = "Numbers">
+            <input type="text" name="name" class="question" id="expression" required autocomplete="off" />
+            <label for="expression"><span>Expression:</span></label>
+            <br><br><br><br><br>
+            <input type="text" name="name" class="question" id="answer" required autocomplete="off" />
+            <label for="answer"><span>Answer: </span></label>
+
+            <!-- <label for="expression" id = "expressionLabel">Expression</label>
+            <input type="text" id="expression" placeholder="expression">
+            <br>
+            <label for="answer" id = "answerLabel">Answer</label>
+            <input type="text" id="answer" placeholder="answer"><br> -->
+            <br><br>
+            <button class="button-35" onclick = "answers()" role="button">Answer</button> 
+            <button class="button-35" id = "reset" onclick = "reset()" role="button">Reset</button> 
+            <!-- <button onclick = "answers()" type="button" id = "button-30">calculate</button> -->
+        </div>
+    </body>
+</html>
