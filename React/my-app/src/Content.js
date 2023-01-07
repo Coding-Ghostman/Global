@@ -1,6 +1,6 @@
 import React from "react";
 
-const course = "React"
+// const course = "React"
 
 const Content = () => {
     return(

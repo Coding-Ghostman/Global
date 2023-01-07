@@ -2,14 +2,14 @@
 import './App.css';
 import Header from './header';
 import Content from './Content';
-import DemoForm from './DemoForm';
+import MileStone from './Milestone';
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Content></Content>
-      <DemoForm></DemoForm>
+      <MileStone></MileStone>
     </div>
   );
 }
