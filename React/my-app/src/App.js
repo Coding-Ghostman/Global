@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from './header';
-import Employee from './Employee';
+import Header from './components/header';
+import Employee from './components/Employee';
 import {useState} from 'react'
-import Content from './Content';
+import Content from './components/Content';
 // import MileStone from './Milestone';
 
 
