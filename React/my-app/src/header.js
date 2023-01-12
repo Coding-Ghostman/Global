@@ -3,7 +3,13 @@ import React from 'react';
 const Header = () => {
     return(
         <div>
-            <h1>This is a Header</h1>
+            <div class = "App-header">
+            <h1>Employee Login</h1>
+            </div>
+
+            <div class = "header-image">
+            <img class = "HeaderImage" alt = "" src = "./logo192.png"/>
+            </div>
         </div>
          );
 }

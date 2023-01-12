@@ -7,15 +7,35 @@
   pointer-events: none;
 }
 
+.Employee_header h3{
+  margin-top:5px;
+  font-size: 1.8em;
+}
+
+.HeaderImage{
+  margin-top: 20px;
+  width: 5em;
+  height: 5em;
+
+}
+
+.Employee_table {
+  text-decoration: none;
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 1s linear;
+  .HeaderImage {
+    animation: App-logo-spin infinite 2s linear;
   }
 }
 
 .App-header {
   background-color: #1d325e;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
