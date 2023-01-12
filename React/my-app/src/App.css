@@ -14,8 +14,8 @@
 
 .HeaderImage{
   margin-top: 20px;
-  width: 5em;
-  height: 5em;
+  width: 3em;
+  height: 3em;
 
 }
 
@@ -68,7 +68,7 @@
   /* flex: 1; */
   position: absolute;
   left:15px;
-  top:-18px
+  top: 8px
 }
 
 
