@@ -2,6 +2,7 @@
 import './App.css';
 import Header from './header';
 import Employee from './Employee';
+import {useState} from 'react'
 // import Content from './Content';
 // import MileStone from './Milestone';
 
@@ -30,11 +31,21 @@ function App() {
 //         'amount':200
 //     },
 // ]
+  
+  const [employees, setEmployees] = useState([])
+
+  const saveEmployeeHandler = (id, name, dept, sal) => {
+    let emp = {id:id, name:name, dept:dept, sal:sal}
+    console.log("emp #", emp);
+    setEmployees([...employees, emp])
+    console.log("Employees ##", employees);
+  }
+
 
   return (
     <div className="App">
       <Header></Header>
-      <Employee/>
+      <Employee saveEmployee = {saveEmployeeHandler}/>
       {/* <Content></Content> */}
       {/* <MileStone></MileStone> */}
       {/*  <Content groceryList = {groceryitems} /> */}

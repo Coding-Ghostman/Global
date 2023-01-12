@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Employee=()=>{
+const Employee=({saveEmployee})=>{
     const [id,setId]=useState()
     const [name,setName]=useState('')
     const [dept,setDept]=useState('')
@@ -9,12 +9,13 @@ const Employee=()=>{
     const addEmployee=(e)=>{
         e.preventDefault()
         console.log('code ',id)
-        console.log('name ',name) 
+        console.log('name ',name)
+        saveEmployee(id, name, dept, sal)
     }
     return(
-        <div>
+        <div class = "form_div">
             <form onSubmit={addEmployee}>
-                <label>Code</label><br/>
+                <label>Id</label><br/>
                 <input value={id} onChange={(e)=>setId(e.target.value)}/><br/>
                 <label>Name</label><br/>
                 <input value={name} onChange={(e)=>setName(e.target.value)}/><br/>
