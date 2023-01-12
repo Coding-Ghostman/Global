@@ -4,6 +4,7 @@ import Header from './components/header';
 import Employee from './components/Employee';
 import {useState} from 'react'
 import Content from './components/Content';
+import Todos from './components/Todos';
 // import MileStone from './Milestone';
 
 
@@ -47,6 +48,7 @@ function App() {
       <Header></Header>
       <Employee saveEmployee = {saveEmployeeHandler}/>
       <Content listEmployees = {employees}/>
+      <Todos></Todos>
       {/* <Content></Content> */}
       {/* <MileStone></MileStone> */}
       {/*  <Content groceryList = {groceryitems} /> */}
