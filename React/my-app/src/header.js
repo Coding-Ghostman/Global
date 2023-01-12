@@ -4,11 +4,12 @@ const Header = () => {
     return(
         <div>
             <div class = "App-header">
+            <img class = "HeaderImage" alt = "" src = "./logo192.png"/>
             <h1>Employee Login</h1>
             </div>
 
             <div class = "header-image">
-            <img class = "HeaderImage" alt = "" src = "./logo192.png"/>
+            {/* <img class = "HeaderImage" alt = "" src = "./logo192.png"/> */}
             </div>
         </div>
          );
