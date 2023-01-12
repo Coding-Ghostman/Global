@@ -75,3 +75,9 @@ console.log(marks_avg);
 
 console.log(...marks_avg, ...marks);
 console.log(a, b)
+
+var c = (n,m) => {
+    return n + m;
+}
+
+console.log(c(4,6))
