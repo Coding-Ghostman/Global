@@ -3,7 +3,7 @@ import './App.css';
 import Header from './header';
 import Employee from './Employee';
 import {useState} from 'react'
-// import Content from './Content';
+import Content from './Content';
 // import MileStone from './Milestone';
 
 
@@ -36,9 +36,9 @@ function App() {
 
   const saveEmployeeHandler = (id, name, dept, sal) => {
     let emp = {id:id, name:name, dept:dept, sal:sal}
-    console.log("emp #", emp);
+    // console.log("emp #", emp);
     setEmployees([...employees, emp])
-    console.log("Employees ##", employees);
+    // console.log("Employees ##", employees);
   }
 
 
@@ -46,6 +46,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <Employee saveEmployee = {saveEmployeeHandler}/>
+      <Content listEmployees = {employees}/>
       {/* <Content></Content> */}
       {/* <MileStone></MileStone> */}
       {/*  <Content groceryList = {groceryitems} /> */}
