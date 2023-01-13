@@ -47,8 +47,8 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Employee saveEmployee = {saveEmployeeHandler}/>
-      <Content listEmployees = {employees}/>
+      {/* <Employee saveEmployee = {saveEmployeeHandler}/>
+      <Content listEmployees = {employees}/> */}
       <TodosUsers></TodosUsers>
       {/* <Content></Content> */}
       {/* <MileStone></MileStone> */}
