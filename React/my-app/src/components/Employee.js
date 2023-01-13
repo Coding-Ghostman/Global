@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Employee=({saveEmployee})=>{
+    const Employee=({saveEmployee})=>{
     const [id,setId]=useState()
     const [name,setName]=useState('')
     const [dept,setDept]=useState('')
@@ -8,7 +8,7 @@ const Employee=({saveEmployee})=>{
 
     const addEmployee=(e)=>{
         e.preventDefault()
-        console.log('code ',id)
+        console.log('id ',id)
         console.log('name ',name)
         saveEmployee(id, name, dept, sal)
     }

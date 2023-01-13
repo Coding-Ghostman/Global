@@ -2,54 +2,44 @@
 import './App.css';
 import Header from './components/header';
 import Employee from './components/Employee';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Content from './components/Content';
-import Todos from './components/Todos';
-import TodosUsers from './components/TodosUsers';
+// import Todos from './components/Todos';
+// import TodosUsers from './components/TodosUsers';
 // import MileStone from './Milestone';
 
 
 function App() {
-//   const groceryitems=[
-//     {
-//         'slno':1,
-//         'item':'Rice',
-//         'rate':60,
-//         'qty':10,
-//         'amount':600
-//     },
-//     {
-//         'slno':2,
-//         'item':'Dal',
-//         'rate':90,
-//         'qty':2,
-//         'amount':180
-//     },
-//     {
-//         'slno':3,
-//         'item':'Oil',
-//         'rate':100,
-//         'qty':2,
-//         'amount':200
-//     },
-// ]
   
-  const [employees, setEmployees] = useState([])
+  const [employees,setEmployees]=useState([])
+
+  useEffect(()=>{
+      fetch('http://127.0.0.1:5000/listEmployee')
+      .then(res=>res.json())
+     // .then(data=>console.log(data))
+      .then(data=>setEmployees(data))
+  },[]);
 
   const saveEmployeeHandler = (id, name, dept, sal) => {
     let emp = {id:id, name:name, dept:dept, sal:sal}
-    // console.log("emp #", emp);
-    setEmployees([...employees, emp])
-    // console.log("Employees ##", employees);
-  }
-
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(emp)
+    };
+    console.log('body ##',requestOptions.body)
+  
+    fetch('http://localhost:5000/addEmployee', requestOptions)
+      .then(response => response.json())
+      .then(data => setEmployees([...employees,data]));
+  }   
 
   return (
     <div className="App">
       <Header></Header>
-      {/* <Employee saveEmployee = {saveEmployeeHandler}/>
-      <Content listEmployees = {employees}/> */}
-      <TodosUsers></TodosUsers>
+      <Employee saveEmployee = {saveEmployeeHandler}/>
+      <Content listEmployees = {employees}/>
+      {/* <TodosUsers></TodosUsers> */}
       {/* <Content></Content> */}
       {/* <MileStone></MileStone> */}
       {/*  <Content groceryList = {groceryitems} /> */}

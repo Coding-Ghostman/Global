@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3303,
+            "driver": "MySQL",
+            "database": "test",
+            "name": "Global",
+            "username": "root"
+        }
+    ],
+    "activestate.promptRuntimeCreation": false
+}
