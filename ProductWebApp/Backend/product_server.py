@@ -8,8 +8,14 @@ productList = []
 @app.route('/addProduct', methods=['POST'])
 def addProduct():
     product = request.get_json()
-    
+    productNew = Product(product['id'], product['name'], product['description'], product['category'], product['supplier'], product['price'])
+    productList.append(productNew)
     return product, 201
+
+@app.route('/listProducts', methods=['GET'])
+def listProduct():
+    
+    return jsonProduct
 
 
 
