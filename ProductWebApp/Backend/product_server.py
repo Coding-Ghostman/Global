@@ -1,8 +1,12 @@
 from flask import Flask, request
 from Product import Product
+import pymysql
 
 app = Flask(__name__)
 productList = []
+
+def getConnection():
+    db = pymysql.connect()
 
 
 @app.route('/addProduct', methods=['POST'])
