@@ -2,19 +2,21 @@ import json
 from flask import Flask, request, jsonify
 import pymysql
 from flask_cors import CORS, cross_origin
+
 import datetime
 
 from Employee import Employee
 
+app=Flask(__name__)
+CORS(app)
+
+
 x =datetime.datetime.now()
 
 def get_connection():
-    db = pymysql.connect(host="localhost",port=3303 , user="root",database="Employee")
+    db = pymysql.connect(host="localhost",port=3306 , user="root",database="employee")
     return db
-                    
 
-app=Flask(__name__)
-CORS(app)
 employees = []
 
 @app.route('/data')

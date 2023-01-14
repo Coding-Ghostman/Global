@@ -8,7 +8,7 @@ CORS(app)
 productList = []
 
 def getConnection():
-    db = pymysql.connect(host="localhost",port=3334 , user="root",database="Product")
+    db = pymysql.connect(host="localhost",port=3306 , user="root",database="Product")
     return db
 
 @app.route('/testData')
@@ -41,6 +41,7 @@ def addProduct():
         db.commit()
         db.close()
     except Exception as e:
+        print("Exception: ",e)
         db.rollback()
         db.close()
     return product, 201
