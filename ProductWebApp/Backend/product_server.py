@@ -26,10 +26,11 @@ def testData():
 
 
 @app.route('/addProduct', methods=['POST'])
+# @cross_origin
 def addProduct():
     product = request.get_json()
     db = getConnection()
-    sql = "INSERT INTO Product(name, description, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['description'], product['category'],product['supplier'], int(product['price']))
+    sql = "INSERT INTO product_tb(name, description, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['description'], product['category'],product['supplier'], int(product['price']))
     cursor = db.cursor()
     try:
         cursor.execute(sql)
@@ -40,16 +41,15 @@ def addProduct():
         db.close()
     return product, 201
 
-@app.route('/listProducts', methods=['GET'])
-@cross_
+@app.route('/listProduct',methods=['GET'])
+# @cross_origin()
 def listProduct():
     db = getConnection()
     cursor = db.cursor(pymysql.cursors.DictCursor)
-    cursor.execute("select * from Product")
-    productStr = cursor.fetchall()
-    jsonProduct = json.dumps(productStr)
+    cursor.execute("select * from product")
+    jsonStr = cursor.fetchall()
+    jsonStrUpd = json.dumps(jsonStr)
     db.close()
-    return jsonProduct
-
+    return jsonStrUpd
 if __name__ == '__main__':
     app.run(debug=True)
