@@ -18,12 +18,12 @@ function App() {
   const listProducts = () => {
     fetch('http://127.0.0.1:5000/listProduct')
       .then(res=>res.json())
-     .then(data=>console.log(data))
+    //  .then(data=>console.log(data))
       .then(data=>setProducts(data))
   }
 
   const saveProductHandler = (name, description, category, supplier, price) => {
-    let emp = {name:name, description:description, category:category, supplier:supplier, price:price}
+    let emp = {name:name, desription:description, category:category, supplier:supplier, price:price}
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ function App() {
     };
     console.log('body ##',requestOptions.body)
   
-    fetch('http://localhost:5000/addProduct', requestOptions)
+    fetch('http://127.0.0.1:5000/addProduct', requestOptions)
       .then(response => response.json())
       .then(data => setProducts([...Products,data]));
   }   

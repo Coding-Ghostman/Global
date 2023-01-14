@@ -32,7 +32,7 @@ def addProduct():
     product = request.get_json()
     db = getConnection()
     cursor = db.cursor()
-    sql = "INSERT INTO product_tb(name, desription, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['description'], product['category'],product['supplier'], int(product['price']))
+    sql = "INSERT INTO product_tb(name, desription, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['desription'], product['category'],product['supplier'], int(product['price']))
     print(sql)
     
     try:
