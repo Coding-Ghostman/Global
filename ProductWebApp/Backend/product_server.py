@@ -4,6 +4,7 @@ import pymysql
 import json
 
 app = Flask(__name__)
+CORS(app)
 productList = []
 
 def getConnection():
@@ -26,14 +27,17 @@ def testData():
 
 
 @app.route('/addProduct', methods=['POST'])
-# @cross_origin
+@cross_origin
 def addProduct():
     product = request.get_json()
     db = getConnection()
-    sql = "INSERT INTO product_tb(name, description, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['description'], product['category'],product['supplier'], int(product['price']))
     cursor = db.cursor()
+    sql = "INSERT INTO product_tb(name, desription, category, supplier, price) VALUES ('%s', '%s', '%s', '%s', '%d' )" % (product['name'],product['description'], product['category'],product['supplier'], int(product['price']))
+    print(sql)
+    
     try:
         cursor.execute(sql)
+        print("scuucesfully entered")
         db.commit()
         db.close()
     except Exception as e:
@@ -42,14 +46,15 @@ def addProduct():
     return product, 201
 
 @app.route('/listProduct',methods=['GET'])
-# @cross_origin()
+@cross_origin()
 def listProduct():
     db = getConnection()
     cursor = db.cursor(pymysql.cursors.DictCursor)
-    cursor.execute("select * from product")
+    cursor.execute("select * from product_tb")
     jsonStr = cursor.fetchall()
     jsonStrUpd = json.dumps(jsonStr)
     db.close()
     return jsonStrUpd
+
 if __name__ == '__main__':
     app.run(debug=True)
