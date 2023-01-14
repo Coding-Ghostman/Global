@@ -1,7 +1,6 @@
 import React from "react";
 
 const Content = ({listEmployees}) => {
-    console.log(listEmployees);
     return(
         <div>
             <div class = "Employee_header">
@@ -20,7 +19,7 @@ const Content = ({listEmployees}) => {
                     <td>{items.id}</td>
                     <td>{items.name}</td>
                     <td>{items.dept}</td>
-                    <td>{items.sal}</td>
+                    <td>{items.salary}</td>
                 </tr>)}
             </table>
             </div>

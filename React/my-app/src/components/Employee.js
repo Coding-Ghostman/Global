@@ -8,8 +8,6 @@ import React, {useState} from 'react';
 
     const addEmployee=(e)=>{
         e.preventDefault()
-        console.log('id ',id)
-        console.log('name ',name)
         saveEmployee(id, name, dept, sal)
     }
     return(

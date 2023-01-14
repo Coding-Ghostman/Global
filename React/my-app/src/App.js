@@ -16,9 +16,16 @@ function App() {
   useEffect(()=>{
       fetch('http://127.0.0.1:5000/listEmployee')
       .then(res=>res.json())
-     // .then(data=>console.log(data))
+    //  .then(data=>console.log(data))
       .then(data=>setEmployees(data))
   },[]);
+
+  const listEmployees = () => {
+    fetch('http://127.0.0.1:5000/listEmployee')
+      .then(res=>res.json())
+     .then(data=>console.log(data))
+      .then(data=>setEmployees(data))
+  }
 
   const saveEmployeeHandler = (id, name, dept, sal) => {
     let emp = {id:id, name:name, dept:dept, sal:sal}
