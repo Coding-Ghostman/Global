@@ -1,10 +1,14 @@
 from flask import Flask, request
+from Product import Product
 
 app = Flask(__name__)
+productList = []
+
 
 @app.route('/addProduct', methods=['POST'])
 def addProduct():
-    product = request.get_json('product')
+    product = request.get_json()
+    
     return product, 201
 
 
