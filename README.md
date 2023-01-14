@@ -1,2 +1,2 @@
 # Global
-This is 
+This is Global course thing
