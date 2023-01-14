@@ -27,7 +27,7 @@ def testData():
 
 
 @app.route('/addProduct', methods=['POST'])
-@cross_origin
+@cross_origin()
 def addProduct():
     product = request.get_json()
     db = getConnection()
